@@ -43,13 +43,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
     if (window.scrollY > 100) {
-        header.style.background = isDark ? 'rgba(26, 26, 26, 0.98)' : 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = isDark ? '0 5px 20px rgba(0, 0, 0, 0.3)' : '0 5px 20px rgba(0, 0, 0, 0.1)';
+        header.style.background = '#0a0a0a'; // Solid black background
+        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.5)';
     } else {
-        header.style.background = isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+        header.style.background = 'rgba(10, 10, 10, 0.95)'; // Slightly transparent black
         header.style.boxShadow = 'none';
     }
 });
