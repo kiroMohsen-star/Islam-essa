@@ -1,25 +1,9 @@
 :root {
-    --bg-primary: #121212;
-    --bg-secondary: #1e1e1e;
-    --bg-tertiary: #2d2d2d;
-    --bg-card: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent-primary: #7289da;
-    --accent-secondary: #5869a8;
-    --shadow-light: rgba(0, 0, 0, 0.2);
-    --shadow-accent: rgba(114, 137, 218, 0.3);
-    --footer-bg: #1a1a1a;
-    --footer-text: #ffffff;
-}
-
-[data-theme="dark"] {
     --bg-primary: #0a0a0a;
     --bg-secondary: #111111;
     --bg-tertiary: #1a1a1a;
     --bg-card: #1e1e1e;
     --bg-header: rgba(26, 26, 26, 0.95);
-    --footer-bg: linear-gradient(135deg, #1a1a1a, #0a0a0a);
     --text-primary: #ffffff;
     --text-secondary: #e0e0e0;
     --text-light: #999999;
@@ -28,6 +12,7 @@
     --border-color: rgba(0, 255, 127, 0.2);
     --shadow-light: rgba(0, 0, 0, 0.5);
     --shadow-accent: rgba(0, 255, 127, 0.3);
+    --footer-bg: #1a1a1a;
     --footer-text: #ffffff;
 }
 
@@ -92,19 +77,36 @@ body {
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background: var(--bg-header);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    background-color: var(--bg-primary);
+    /* Add solid background */
+    backdrop-filter: blur(10px);
+    /* Optional: adds blur effect */
+    transition: background-color 0.3s ease;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Optional: Add subtle shadow for better visibility */
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-color);
+    opacity: 0.1;
 }
 
 .logo {
